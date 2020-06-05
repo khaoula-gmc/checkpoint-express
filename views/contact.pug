@@ -1,0 +1,21 @@
+extends layout
+block layout-content
+  div.View.ContactView
+    h1.Banner Contact us
+    .container
+        form(action='action_page.php')
+            
+            input#fname(type='text' name='firstname' placeholder='Your first name..')
+            
+            input#lname(type='text' name='lastname' placeholder='Your last name..')
+            
+            input#lname(type='text' name='email' placeholder='Your email..')
+            
+            label(for='country') Country
+            select#country(name='country')
+                option(value='tunisia') Tunisia
+                option(value='canada') Canada
+                option(value='usa') USA
+            label(for='subject') Subject
+            textarea#subject(name='subject' placeholder='Write something..' style='height:200px')
+            input(type='submit' value='Submit')
