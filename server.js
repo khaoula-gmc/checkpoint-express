@@ -9,7 +9,7 @@ const path = require("path");
 /**
  * App Variables
  */
-app=express()
+const app=express()
 const port = process.env.PORT || "3000"
 /**
  *  App Configuration
@@ -20,7 +20,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(available=(req,res,next)=>{
     const day= new Date()
-    if((day.getDate()==(1||6))||day.getHours()<9||day.getHours()>=17) 
+    const isAvailable=(day.getDate()==(1||6)||day.getHours()<9||day.getHours()>=17)
+    if(isAvailable) 
     res.send(`<h2 style="color:red ; text-align:center ; padding-top:250px"> 
     Sorry, this web site is only available in working time (Monday to Friday,  from 9 to 17) </br>
     Thank you for your understanding </h2>`)
